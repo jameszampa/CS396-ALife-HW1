@@ -1,3 +1,5 @@
+# Written with assistance from Github Co-Pilot
+
 import time
 import dm_control.mujoco
 import mujoco.viewer
