@@ -2,9 +2,42 @@
     <worldbody>
         <light diffuse=".5 .5 .5" pos="0 0 2" dir="0 -1 0"/>
         <geom type="plane" size="1 1 0.1" rgba=".9 0 0 1"/>
+        
         <body pos="0 0 1">
             <joint type="free"/>
             <geom type="box" size="0.1 0.2 0.3" rgba="0 .9 0 1"/>
+
+            <!-- Front Left Wheel -->
+            <body pos="0.15 0.25 -0.3">
+                <joint name="front_left_wheel_joint" type="hinge" axis="0 1 0"/>
+                <geom type="sphere" size="0.05" rgba="0 0 .9 1"/>
+            </body>
+
+            <!-- Front Right Wheel -->
+            <body pos="0.15 -0.25 -0.3">
+                <joint name="front_right_wheel_joint" type="hinge" axis="0 1 0"/>
+                <geom type="sphere" size="0.05" rgba="0 0 .9 1"/>
+            </body>
+
+            <!-- Rear Left Wheel -->
+            <body pos="-0.15 0.25 -0.3">
+                <joint name="rear_left_wheel_joint" type="hinge" axis="0 1 0"/>
+                <geom type="sphere" size="0.05" rgba="0 0 .9 1"/>
+            </body>
+
+            <!-- Rear Right Wheel -->
+            <body pos="-0.15 -0.25 -0.3">
+                <joint name="rear_right_wheel_joint" type="hinge" axis="0 1 0"/>
+                <geom type="sphere" size="0.05" rgba="0 0 .9 1"/>
+            </body>
         </body>
     </worldbody>
+
+    <actuator>
+        <!-- Actuators for the wheel joints -->
+        <motor joint="front_left_wheel_joint" name="motor_front_left" />
+        <motor joint="front_right_wheel_joint" name="motor_front_right" />
+        <motor joint="rear_left_wheel_joint" name="motor_rear_left" />
+        <motor joint="rear_right_wheel_joint" name="motor_rear_right" />
+    </actuator>
 </mujoco>

@@ -1,1 +1,1 @@
-# CS396-ALife-HW1
+# CS396 ALife HW1
